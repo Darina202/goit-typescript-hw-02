@@ -12,12 +12,20 @@ type User = {
   surname: string;
   email: string;
   password: string;
-}
+};
 
-function createOrUpdateUser(initialValues: User) {
+// V1 with requirement type
+// function createOrUpdateUser(initialValues: User) {
+// }
+
+// V2 with Partial / without requirement type
+function createOrUpdateUser(initialValues: Partial<User>) {
   // Оновлення користувача
 }
 
+// V3 with Omit / without requirement type
+// function createOrUpdateUser(initialValues: Omit<User, 'name' | 'surname'>) {
+// }
 createOrUpdateUser({ email: 'user@mail.com', password: 'password123' });
 
 export {};
